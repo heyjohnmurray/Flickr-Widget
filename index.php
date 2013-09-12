@@ -18,11 +18,11 @@
 			<!-- close box-16 -->							
 			<div class="box-8">
 				<div class="row">
-					<div id="settings">
+					<div class="settings">
 						<h3 class="section-header">Design Your Widget</h3>						
 						<div class="box-6">
 							<div class="row">
-								<div id="widget-size">
+								<div class="widget-size">
 									<h4>Widget Size</h4>
 									
 									<ul class="wRow clearfix">
@@ -76,12 +76,12 @@
 						
 						<div class="box-7">
 							<div class="row">
-								<div id="image-size" class="margin-none">
+								<div class="image-size">
 									<h4>Image Size</h4>									
 									<ul class="clearfix">
-										<li><a href="/" id="large"></a></li>
-										<li><a href="/" id="medium"></a></li>
-										<li><a href="/" id="small"></a></li>						
+										<li><a href="/" class="large"></a></li>
+										<li><a href="/" class="medium"></a></li>
+										<li><a href="/" class="small"></a></li>						
 									</ul>								
 								</div>
 								<!-- close #image-size -->
@@ -91,8 +91,8 @@
 						<!-- close .box-7 -->
 						
 						<div class="box-6">
-							<div class="row">
-								<div id="scheme-chooser">
+							<div class="row with-spacing">
+								<div class="scheme-chooser">
 									<h4>Choose a Color Scheme</h4>
 									
 									<ul class="clearfix">
@@ -102,10 +102,10 @@
 										<li><a href="/" class="scheme-4"></a></li>
 									</ul>																
 									<br class="clear" />
-									<div id="advanced-options">
-										<a href="/" id="show-options">Advanced Options &raquo;</a>
+									<div class="advanced-options">
+										<a href="/" class="show-options">Advanced Options &raquo;</a>
 										
-										<div id="color-editor">
+										<div class="color-editor">
 											<ul class="labels">
 												<li>Background</li> 
 												<li class="text-arrow">&#8627; Text</li> 
@@ -121,7 +121,7 @@
 											
 											<br class="clear" />						
 											
-											<a href="/" id="apply-colors">Apply Colors &raquo;</a>
+											<a href="/" class="apply-colors">Apply Colors &raquo;</a>
 										</div>										
 									</div>
 									<!-- close #advanced-colors.box-4 -->
@@ -133,7 +133,7 @@
 						<!-- close .box-6 -->
 						<div class="box-7">
 							<div class="row">
-								<div id="code-output">
+								<div class="code-output">
 									<h4>Here's Your Code</h4>
 									<textarea name="" id=""></textarea>
 								</div>
@@ -150,7 +150,7 @@
 			<!-- close box -->
 			<div class="box-8">
 				<div class="row">
-					<div id="preview">
+					<div class="preview">
 						<h3 class="section-header">Live Preview</h3>						
 						<div class="images clearfix">					
 							<ul>
