@@ -201,13 +201,13 @@ h1{text-align: center; border-bottom: 1px dotted #444; font-weight: 400; padding
 .section-header{background: #0063DC; color: #fff; padding: 5px;}
 
 #settings{}
-	#widget-size{width: 180px;}
-		#widget-size ul{margin: 20px 0px; width: 180px;}
+	#widget-size{/* width: 180px; */}
+		#widget-size ul{width: 180px;}
 		#widget-size li{float: left; margin: 0px 0px 2px 0px;}
 		#widget-size li a{float: left; width: 40px; height: 40px; background: #ccc; margin: 2px 5px 2px 0px;}
 		#widget-size li a:hover{background: #666;}
 	
-	#image-size{width: 240px;}
+	#image-size{}
 		#image-size ul{margin: 20px 0px; width: 240px;}
 		#image-size li{float: left;}
 		#image-size a{float: left; background: #ccc; display: block; margin: 0px 5px 0px 0px;}
@@ -218,7 +218,7 @@ h1{text-align: center; border-bottom: 1px dotted #444; font-weight: 400; padding
 			.large-thumbnail{}
 		.dimensions{width: 92%; font-size: 14px; text-align: center; padding: 5px; background: #FF0084; color: #fff;}
 		
-	#scheme-chooser{width:180px;}
+	#scheme-chooser{}
 		#scheme-chooser ul{margin: 20px 0px 0px 0px;}
 		#scheme-chooser li{float: left;}
 		#scheme-chooser li a{float:left; width: 40px; height: 40px; margin: 2px 3px 2px 0px; border: 1px solid #fff; -webkit-box-shadow: 1px 1px 0px 0px #ccc; box-shadow: 1px 1px 0px 0px #ccc;}

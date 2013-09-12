@@ -22,21 +22,48 @@
 					<div id="widget-size" class="box-4">
 						<h4>Widget Size</h4>
 						
-						<ul class="clearfix">
-							<li><a href="/" class="widget-box"></a></li>
-							<li><a href="/" class="widget-box"></a></li>
-							<li><a href="/" class="widget-box"></a></li>
-							<li><a href="/" class="widget-box"></a></li>
-							<li><a href="/" class="widget-box"></a></li>
-							<li><a href="/" class="widget-box"></a></li>
-							<li><a href="/" class="widget-box"></a></li>
-							<li><a href="/" class="widget-box"></a></li>
-							<li><a href="/" class="widget-box"></a></li>
-							<li><a href="/" class="widget-box"></a></li>
-							<li><a href="/" class="widget-box"></a></li>
-							<li><a href="/" class="widget-box"></a></li>
+						<ul class="wRow clearfix">
+							<li data-row="1" data-column="1">
+								<a href="/" class="widget-box"></a>
+							</li>
+							<li data-row="1" data-column="2">
+								<a href="/" class="widget-box"></a>
+							</li>
+							<li data-row="1" data-column="3">
+								<a href="/" class="widget-box"></a>
+							</li>
+							<li data-row="1" data-column="4">
+								<a href="/" class="widget-box"></a>
+							</li>
 						</ul>
-						
+						<ul class="wRow clearfix">
+							<li data-row="2" data-column="1">
+								<a href="/" class="widget-box"></a>
+							</li>
+							<li data-row="2" data-column="2">
+								<a href="/" class="widget-box"></a>
+							</li>
+							<li data-row="2" data-column="3">
+								<a href="/" class="widget-box"></a>
+							</li>
+							<li data-row="2" data-column="4">
+								<a href="/" class="widget-box"></a>
+							</li>
+						</ul>
+						<ul class="wRow clearfix">
+							<li data-row="3" data-column="1">
+								<a href="/" class="widget-box"></a>
+							</li>
+							<li data-row="3" data-column="2">
+								<a href="/" class="widget-box"></a>
+							</li>
+							<li data-row="3" data-column="3">
+								<a href="/" class="widget-box"></a>
+							</li>
+							<li data-row="3" data-column="4">
+								<a href="/" class="widget-box"></a>
+							</li>
+						</ul>
 					</div>
 					<!-- close #widget-size -->
 					
@@ -46,7 +73,7 @@
 						<ul class="clearfix">
 							<li><a href="/" id="large"></a></li>
 							<li><a href="/" id="medium"></a></li>
-							<li><a href="/" id="small"></a></li>							
+							<li><a href="/" id="small"></a></li>						
 						</ul>
 						
 					</div>
@@ -90,10 +117,6 @@
 					</div>
 					<!-- close #scheme-chooser -->	
 					
-					<div id="content-filter" class="box-4">
-						<h4>Preferred Content</h4>
-					</div>
-					<!-- close #content-filter -->						
 				</div>
 				<!-- close left side -->					
 				
