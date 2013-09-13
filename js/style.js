@@ -19,15 +19,15 @@ $(function() {
 	$(".wRow li").on("click", function(){
 		var column = $(this).data("column");
 		var row = $(this).data("row");
-		console.log("column:" + column + ", row:" + row);
+		//console.log("column:" + column + ", row:" + row);
 		//remove class
 		$("li").removeClass("bar");
-		//$(this).addClass("bar");
+		//keep experimenting with .filter()
 		$(".wRow li").each(function(){
 			$(this).siblings()	
-				   .eq(column)
+ 				   .eq(column)
 				   .prevAll()				   
-				   .addClass("bar");
+ 				   .addClass("bar");
 		});
 	});
 //close jquery
