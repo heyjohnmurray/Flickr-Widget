@@ -582,15 +582,15 @@ h1 {
   color: #fff;
   padding: 5px;
 }
-.bar a {
-  background: #ff0084 !important;
-}
 .settings .widget-size {
   width: 180px;
 }
 .settings .widget-size li {
   float: left;
   margin: 0px 0px 2px 0px;
+}
+.settings .widget-size li.highlight a {
+  background: #ff0084;
 }
 .settings .widget-size li a {
   float: left;
