@@ -15,5 +15,17 @@ $(function() {
 	$(".show-options").click(function(){
 		$(".color-editor").slideDown(750);
 	});
+	
+	$(".wRow li").on("click", function(){
+		var column = $(this).data("column");
+		var row = $(this).data("row");
+		console.log("column:" + column + ", row:" + row);
+		//remove class
+		$("li").removeClass("bar");
+		$(this).addClass("bar");
+		$(".wRow li").each(function(){			
+			$(this).parent().siblings().children().eq(column).addClass("bar");
+		});				
+	});
 //close jquery	
 });

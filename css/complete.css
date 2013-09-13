@@ -582,6 +582,9 @@ h1 {
   color: #fff;
   padding: 5px;
 }
+.bar a {
+  background: #ff0084 !important;
+}
 .settings .widget-size {
   width: 180px;
 }

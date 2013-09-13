@@ -11,7 +11,7 @@
 		<div class="container clearfix">
 			<div class="box-16">
 				<div class="row">
-					<h1>Create Your Own Flickr&trade; widget</h1>
+					<!-- <h1>Create Your Own Flickr&trade; widget</h1> -->
 				</div>
 				<!-- close row -->
 			</div>
@@ -26,6 +26,23 @@
 									<h4>Widget Size</h4>
 									
 									<ul class="wRow clearfix">
+										<li data-row="0" data-column="0">
+											<a href="/" class="widget-box"></a>
+										</li>
+										<li data-row="0" data-column="1">
+											<a href="/" class="widget-box"></a>
+										</li>
+										<li data-row="0" data-column="2">
+											<a href="/" class="widget-box"></a>
+										</li>
+										<li data-row="0" data-column="3">
+											<a href="/" class="widget-box"></a>
+										</li>
+									</ul>
+									<ul class="wRow clearfix">
+										<li data-row="1" data-column="0">
+											<a href="/" class="widget-box"></a>
+										</li>
 										<li data-row="1" data-column="1">
 											<a href="/" class="widget-box"></a>
 										</li>
@@ -35,11 +52,11 @@
 										<li data-row="1" data-column="3">
 											<a href="/" class="widget-box"></a>
 										</li>
-										<li data-row="1" data-column="4">
-											<a href="/" class="widget-box"></a>
-										</li>
 									</ul>
 									<ul class="wRow clearfix">
+										<li data-row="2" data-column="0">
+											<a href="/" class="widget-box"></a>
+										</li>
 										<li data-row="2" data-column="1">
 											<a href="/" class="widget-box"></a>
 										</li>
@@ -47,23 +64,6 @@
 											<a href="/" class="widget-box"></a>
 										</li>
 										<li data-row="2" data-column="3">
-											<a href="/" class="widget-box"></a>
-										</li>
-										<li data-row="2" data-column="4">
-											<a href="/" class="widget-box"></a>
-										</li>
-									</ul>
-									<ul class="wRow clearfix">
-										<li data-row="3" data-column="1">
-											<a href="/" class="widget-box"></a>
-										</li>
-										<li data-row="3" data-column="2">
-											<a href="/" class="widget-box"></a>
-										</li>
-										<li data-row="3" data-column="3">
-											<a href="/" class="widget-box"></a>
-										</li>
-										<li data-row="3" data-column="4">
 											<a href="/" class="widget-box"></a>
 										</li>
 									</ul>
