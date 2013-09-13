@@ -23,13 +23,18 @@ $(function() {
 		//remove class
 		$("li").removeClass("bar");
 		$(".wRow").filter(function(index){
-			if(index <= row){
-				console.log(row);
+			if(index <= row){				
 				return true;
 			}
-		})	.children()			
-			.prevAll()
+			//console.log(row);				
+		})  .children()			
 			.addClass("bar");
+		$(".wRow li").each(function(){
+			$(this).siblings()
+				   .eq(column)
+				   .prevAll()
+				   .removeClass("bar");
+		});
 	});
 //close jquery
 });
