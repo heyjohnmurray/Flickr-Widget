@@ -22,12 +22,11 @@ $(function() {
 		console.log("column:" + column + ", row:" + row);
 		//remove class
 		$("li").removeClass("bar");
-		$(this).addClass("bar");
+		//$(this).addClass("bar");
 		$(".wRow li").each(function(){
-			$(this).parent()				   
-				   .siblings()
-				   .children()
+			$(this).siblings()	
 				   .eq(column)
+				   .prevAll()				   
 				   .addClass("bar");
 		});
 	});
