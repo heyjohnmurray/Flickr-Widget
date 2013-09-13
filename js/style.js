@@ -23,9 +23,13 @@ $(function() {
 		//remove class
 		$("li").removeClass("bar");
 		$(this).addClass("bar");
-		$(".wRow li").each(function(){			
-			$(this).parent().siblings().children().eq(column).addClass("bar");
-		});				
+		$(".wRow li").each(function(){
+			$(this).parent()				   
+				   .siblings()
+				   .children()
+				   .eq(column)
+				   .addClass("bar");
+		});
 	});
-//close jquery	
+//close jquery
 });
