@@ -22,13 +22,14 @@ $(function() {
 		//console.log("column:" + column + ", row:" + row);
 		//remove class
 		$("li").removeClass("bar");
-		//keep experimenting with .filter()
-		$(".wRow li").each(function(){
-			$(this).siblings()	
- 				   .eq(column)
-				   .prevAll()				   
- 				   .addClass("bar");
-		});
+		$(".wRow").filter(function(index){
+			if(index <= row){
+				console.log(row);
+				return true;
+			}
+		})	.children()			
+			.prevAll()
+			.addClass("bar");
 	});
 //close jquery
 });
