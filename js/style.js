@@ -6,41 +6,68 @@ $(function() {
 	$(".image-size a").click(function(){
 		var idWidth = $(this).width();
 		var idHeight = $(this).height();
+		var size = $(this).data("size");
 		$(".thumbnail img").width(idWidth);
 		$(".thumbnail img").height(idHeight);
 		$(".dimensions").remove();
 		$(".image-size ul").prepend('<li class="dimensions"><strong>Dimensions</strong>: ' + idWidth + ' x ' + idHeight + '</li>');
+		
+		$(".preview .flickr-image").animate({
+			width: idWidth,
+			height: idHeight
+		});
 	});
 	
-	$(".show-options").click(function(){
-		$(".color-editor").slideDown(750);
-	});
 	//widget size creator code
 	$(".wRow li").on("click", function(){
 		var column = $(this).data("column");
 		var row = $(this).data("row");
-		//console.log("column:" + column + ", row:" + row);
-		//remove class
+		
 		$("li").removeClass("highlight");
-		//only apply a class to a <ul> that is less than or equal to the row value of the <li> you clicked on
 		$(".wRow").filter(function(index){
 			if(index <= row){
 				return true;
 			}
-			//console.log(row);
-		})  .children()
-			.addClass("highlight");
-		//look through the <li>s and remove the class from any <li> that is in a column that is greate than or equal to the value of the <li> you clicked on
+		}).children().addClass("highlight");
+		
 		$(".wRow li").each(function(){
-		  $(this).siblings()
-		   .filter(function(index){
-		   		if(index >= column){
-		   			return true;
-		   		}
-		   	})
-		   .nextAll()
-		   .removeClass("highlight");
+			$(this).siblings()
+				.filter(function(index){
+			   		if(index >= column){
+			   			return true;
+			   		}
+			   	}).nextAll().removeClass("highlight");
 		});
+	});
+	//get flickr images and organize them on the page
+	var $children = $(".preview .images .flickr-image");
+	$.ajax({
+		dataType: "jsonp",		
+		url: "http://ycpi.api.flickr.com/services/feeds/photos_public.gne?id=27453474@N02&format=json&jsoncallback=?",
+		beforeSend: function(){
+			$(".loading").addClass("show");
+		},
+		success: function(data){
+			$(".loading").removeClass("show").addClass("hide");
+			for(var i=0; i<12; i++){
+				$(".preview .images").append("<div class='flickr-image'>" + "<img src='" + data.items[i].media.m + "' width='' height='' alt='' />" + "</div>");
+			}					
+			for(var i = 0, l = $children.length; i < l; i += 4) {
+			    $children.slice(i, i+4).wrapAll('<div class="previewRow"></div>');
+			}			
+		},
+		error: function(){
+			console.log("something went wrong!");
+		}
+	});
+	//keep working on this
+	$(".js-get-code").on("click", function(){
+		var number = 2;
+		function restack(number){
+			for(var i = 0, l = $children.length; i < l; i += number) {
+			    $children.slice(i, i+number).wrapAll('<div class="previewRow"></div>');
+			}
+		}
 	});
 //close jquery
 });

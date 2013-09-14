@@ -356,6 +356,9 @@ i {
 .nomargin {
   margin: 0;
 }
+.show {
+  display: block;
+}
 .hide {
   display: none;
 }
@@ -450,6 +453,16 @@ table {
 table th,
 table td {
   text-align: left;
+}
+.border {
+  border: 1px solid #fff;
+  -webkit-box-shadow: 1px 1px 0px 0px #ccc;
+  box-shadow: 1px 1px 0px 0px #ccc;
+}
+.border:hover {
+  -webkit-box-shadow: 1px 3px 0px 0px #ccc;
+  box-shadow: 1px 3px 0px 0px #ccc;
+  cursor: pointer;
 }
 .position {
   position: relative;
@@ -585,6 +598,9 @@ h1 {
 .settings .widget-size {
   width: 180px;
 }
+.settings .widget-size h4 {
+  margin-bottom: 20px;
+}
 .settings .widget-size li {
   float: left;
   margin: 0px 0px 2px 0px;
@@ -600,11 +616,10 @@ h1 {
   margin: 2px 5px 2px 0px;
 }
 .settings .widget-size li a:hover {
-  background: #666666;
+  background: #ff0084;
 }
 .settings .image-size ul {
-  margin: 20px 0px;
-  width: 240px;
+  margin: 20px 0;
 }
 .settings .image-size li {
   float: left;
@@ -620,23 +635,23 @@ h1 {
   background: #666666;
 }
 .settings .image-size .large {
+  width: 125px;
+  height: 125px;
+}
+.settings .image-size .medium {
   width: 100px;
   height: 100px;
 }
-.settings .image-size .medium {
+.settings .image-size .small {
   width: 75px;
   height: 75px;
-}
-.settings .image-size .small {
-  width: 45px;
-  height: 45px;
 }
 .settings .image-size .dimensions {
   width: 100%;
   font-size: 14px;
   text-align: center;
   padding: 5px;
-  background: #ff0084;
+  background: #0063dc;
   color: #fff;
 }
 .settings .scheme-chooser ul {
@@ -657,6 +672,7 @@ h1 {
 .settings .scheme-chooser li a:hover {
   -webkit-box-shadow: 1px 3px 0px 0px #ccc;
   box-shadow: 1px 3px 0px 0px #ccc;
+  cursor: pointer;
 }
 .settings .scheme-chooser .scheme-1 {
   background: #0063dc;
@@ -693,26 +709,28 @@ h1 {
 .settings .scheme-chooser .advanced-options input {
   width: 75px;
 }
-.settings .scheme-chooser .advanced-options a {
-  font-size: 14px;
-  display: block;
+.settings .code-output textarea {
+  width: 100%;
+  height: 120px;
 }
-.settings .scheme-chooser .advanced-options a.apply-colors {
-  width: 60%;
+.settings a.button {
+  width: 140px;
   padding: 10px;
   background: #0063dc;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   border: 1px solid #fff;
   color: #fff;
+  font-size: 14px;
+  display: block;
 }
-.settings .scheme-chooser .advanced-options a.apply-colors:hover {
+.settings a.button:hover {
+  background: #ff0084;
   -webkit-box-shadow: 2px 2px 0px 0px #bbb;
   box-shadow: 2px 2px 0px 0px #bbb;
 }
-.settings .code-output textarea {
-  width: 294px;
-  height: 100px;
+.preview {
+  position: relative;
 }
 .preview .thumbnail {
   float: left;
@@ -721,12 +739,36 @@ h1 {
 .preview li {
   float: left;
   overflow: hidden;
-  width: 110px;
-  height: 110px;
-  margin: 5px 5px 0 0;
+  margin: 5px 15px 5px 0;
 }
-.preview li img {
-  margin: 0 0 -80px -40px;
+.preview .previewRow {
+  float: left;
+  display: block;
+  width: 100%;
+}
+.preview .flickr-image {
+  float: left;
+  width: 125px;
+  height: 125px;
+  margin: 10px;
+  overflow: hidden;
+  border: 1px solid #fff;
+  -webkit-box-shadow: 1px 1px 0px 0px #ccc;
+  box-shadow: 1px 1px 0px 0px #ccc;
+}
+.preview .flickr-image:hover {
+  -webkit-box-shadow: 1px 3px 0px 0px #ccc;
+  box-shadow: 1px 3px 0px 0px #ccc;
+  cursor: pointer;
+}
+.preview .flickr-image img {
+  max-width: none;
+  margin: 0px 0px -80px -40px;
+}
+.preview .loading {
+  position: absolute;
+  top: 100px;
+  left: 50%;
 }
 @media screen and (min-width: 321px) {
   

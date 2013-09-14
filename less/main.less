@@ -48,35 +48,40 @@ h1{text-align: center; border-bottom: 1px dotted #444; font-weight: 400; padding
 
 .settings{
 	.widget-size{width: 180px;
+		h4{
+			margin-bottom: 20px;
+		}
 		li{float: left; margin: 0px 0px 2px 0px;			
 			&.highlight{
 				a{background: @pink;}
 			}
 			a{
 				float: left; width: 35px; height: 35px; background: #ccc; margin: 2px 5px 2px 0px;
-				&:hover{background: @dark-gray;}
+				&:hover{background: @pink;}
 			}
 		}				
 	}
 	
 	.image-size{
-		ul{margin: 20px 0px; width: 240px;}
+		ul{margin: 20px 0;}
 		li{float: left;}
 		a{float: left; background: #ccc; display: block; margin: 0px 5px 0px 0px;}
 		a:hover, .image-size .current{background: @dark-gray;}
-		.large{width: 100px; height: 100px;}
-		.medium{width: 75px; height: 75px;}
-		.small{width: 45px; height: 45px;}
+		.large{width: 125px; height: 125px;}
+		.medium{width: 100px; height: 100px;}
+		.small{width: 75px; height: 75px;}
 		.large-thumbnail{}
-		.dimensions{width: 100%; font-size: 14px; text-align: center; padding: 5px; background: @pink; color: #fff;}
+		.dimensions{width: 100%; font-size: 14px; text-align: center; padding: 5px; background: @blue; color: #fff;}
 	}
 	.scheme-chooser{
 		ul{margin: 20px 0px 0px 0px;}
 		li{float: left;
-			a{float:left; width: 40px; height: 40px; margin: 2px 3px 2px 0px; border: 1px solid #fff; -webkit-box-shadow: 1px 1px 0px 0px #ccc; box-shadow: 1px 1px 0px 0px #ccc;
-				&:hover{-webkit-box-shadow: 1px 3px 0px 0px #ccc; box-shadow: 1px 3px 0px 0px #ccc;}
+			a{
+				float:left; width: 40px; height: 40px; margin: 2px 3px 2px 0px;
+				.border;
 			}
 		}
+		
 				
 		.scheme-1{background: @blue;}
 		.scheme-2{background: @pink;}
@@ -90,21 +95,52 @@ h1{text-align: center; border-bottom: 1px dotted #444; font-weight: 400; padding
 				.text-arrow{padding: 0px 0px 0px 10px;}
 			li{float: none; height: 20px;}
 			input{width: 75px;}
-			a{font-size: 14px; display: block;}
-			a.apply-colors{width: 60%; padding: 10px; background: @blue; -webkit-border-radius: 5px; border-radius: 5px; border: 1px solid #fff; color: #fff;
-				&:hover{-webkit-box-shadow:  2px 2px 0px 0px #bbb; box-shadow:  2px 2px 0px 0px #bbb;}
-			}	
 		}
 	}
 	.code-output{
-		textarea{width: 294px; height: 100px;}
+		textarea{width: 100%; height: 120px;}
+	}
+	
+	a.button{width: 140px; padding: 10px; background: @blue; -webkit-border-radius: 5px; border-radius: 5px; border: 1px solid #fff; color: #fff; font-size: 14px; display: block;
+		&:hover{background: @pink; -webkit-box-shadow:  2px 2px 0px 0px #bbb; box-shadow:  2px 2px 0px 0px #bbb;}
 	}
 }
 
 	
 .preview{
-	.thumbnail{float: left; margin: 2px 5px;}
-	li{float: left; overflow: hidden; width: 110px; height: 110px; margin: 5px 5px 0 0;
-		img{margin: 0 0 -80px -40px;}
+	position: relative;
+	
+	.thumbnail{
+		float: left; margin: 2px 5px;
 	}
+	
+	li{
+		float: left; overflow: hidden; margin: 5px 15px 5px 0;
+	}
+	
+	.previewRow{
+		float: left;
+		display: block;
+		width: 100%;
+	}
+	
+	.flickr-image{
+		float: left;
+		width: 125px;
+		height: 125px;
+		margin: 10px;
+		overflow: hidden;
+		.border;
+		
+		img{
+			max-width: none;
+			margin: 0px 0px -80px -40px;
+		}
+	}
+	
+	.loading{
+		position: absolute;
+		top: 100px;
+		left: 50%;
+	}	
 }
