@@ -69,7 +69,7 @@ $(function() {
 		
 		$(".preview .images").empty();
 		
-		console.log("y: " + wRow + ", x: " + wColumn);
+		//console.log("y: " + wRow + ", x: " + wColumn);
 		
 		$.ajax({
 			dataType: "jsonp",		
@@ -84,7 +84,7 @@ $(function() {
 				}
 				var $children = $(".preview .images .flickr-image");
 				for(var i = 0, l = $children.length; i < l; i += wColumn) {
-				    $children.slice(i, i+wRow).wrapAll('<div class="previewRow"></div>');
+				    $children.slice(i, i+wColumn).wrapAll('<div class="previewRow"></div>');
 				}
 			},
 			error: function(){
