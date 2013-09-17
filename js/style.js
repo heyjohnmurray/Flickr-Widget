@@ -66,8 +66,9 @@ $(function() {
 		var wColumn = ($(".widget-dimensions").data("column") + 1);
 		var wRow = ($(".widget-dimensions").data("row") + 1);
 		var wLength = $(".highlight").length;
+		var widgetOutput = $(".preview").html();
 		
-		$(".preview .images").empty();
+		$(".preview .images, textarea").empty();
 		
 		//console.log("y: " + wRow + ", x: " + wColumn);
 		
@@ -91,6 +92,8 @@ $(function() {
 				console.log("something went wrong!");
 			}
 		});
+		
+		$("textarea").html(widgetOutput);
 	});
 //close jquery
 });
