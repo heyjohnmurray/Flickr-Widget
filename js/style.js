@@ -22,7 +22,7 @@ $(function() {
 	$(".wRow li").on("click", function(){
 		var column = $(this).data("column");
 		var row = $(this).data("row");
-		
+		$(this).addClass("widget-dimensions");
 		$("li").removeClass("highlight");
 		$(".wRow").filter(function(index){
 			if(index <= row){
@@ -39,6 +39,7 @@ $(function() {
 			   	}).nextAll().removeClass("highlight");
 		});
 	});
+	
 	//get flickr images and organize them on the page
 	$.ajax({
 		dataType: "jsonp",		
@@ -62,11 +63,15 @@ $(function() {
 	});
 	//keep working on this
 	$(".js-get-code").on("click", function(){
-		var $children = $(".preview .images .flickr-image");
-		//removes current .previewRow class
-	    $children.unwrap();
-	    //reshape column output soon :: this doesn't work but i'm stopping here for now. 
-	    $.ajax({
+		var wColumn = ($(".widget-dimensions").data("column") + 1);
+		var wRow = ($(".widget-dimensions").data("row") + 1);
+		var wLength = $(".highlight").length;
+		
+		$(".preview .images").empty();
+		
+		console.log("y: " + wRow + ", x: " + wColumn);
+		
+		$.ajax({
 			dataType: "jsonp",		
 			url: "http://ycpi.api.flickr.com/services/feeds/photos_public.gne?id=27453474@N02&format=json&jsoncallback=?",
 			beforeSend: function(){
@@ -74,22 +79,18 @@ $(function() {
 			},
 			success: function(data){
 				$(".loading").removeClass("show").addClass("hide");
-				for(var i=0; i<8; i++){
+				for(var i=0; i<wLength; i++){
 					$(".preview .images").append("<div class='flickr-image'>" + "<img src='" + data.items[i].media.m + "' width='' height='' alt='' />" + "</div>");
 				}
 				var $children = $(".preview .images .flickr-image");
-				for(var i = 0, l = $children.length; i < l; i += 4) {
-				    $children.slice(i, i+4).wrapAll('<div class="previewRow"></div>');
+				for(var i = 0, l = $children.length; i < l; i += wColumn) {
+				    $children.slice(i, i+wRow).wrapAll('<div class="previewRow"></div>');
 				}
 			},
 			error: function(){
 				console.log("something went wrong!");
 			}
 		});
-	    //reshapes row output : make "2" a var soon
-		for(var i = 0, l = $children.length; i < l; i += 2) {
-		    $children.slice(i, i+2).wrapAll('<div class="previewRow"></div>');
-		}
 	});
 //close jquery
 });
