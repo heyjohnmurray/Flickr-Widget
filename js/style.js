@@ -22,6 +22,7 @@ $(function() {
 	$(".wRow li").on("click", function(){
 		var column = $(this).data("column");
 		var row = $(this).data("row");
+		$(".wRow li").removeClass("widget-dimensions");				
 		$(this).addClass("widget-dimensions");
 		$("li").removeClass("highlight");
 		$(".wRow").filter(function(index){
@@ -66,11 +67,11 @@ $(function() {
 		var wColumn = ($(".widget-dimensions").data("column") + 1);
 		var wRow = ($(".widget-dimensions").data("row") + 1);
 		var wLength = $(".highlight").length;
-		var widgetOutput = $(".preview").html();
+		var widgetOutput = $(".preview .images").html();
 		
 		$(".preview .images, textarea").empty();
 		
-		//console.log("y: " + wRow + ", x: " + wColumn);
+		console.log("y: " + wRow + ", x: " + wColumn);
 		
 		$.ajax({
 			dataType: "jsonp",		
