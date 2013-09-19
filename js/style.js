@@ -22,6 +22,7 @@ $(function() {
 	$(".wRow li").on("click", function(){
 		var column = $(this).data("column");
 		var row = $(this).data("row");
+		//widget-dimensions finds the row and column value for the <li> I clicked on and lets me pass those
 		$(".wRow li").removeClass("widget-dimensions");				
 		$(this).addClass("widget-dimensions");
 		$("li").removeClass("highlight");
