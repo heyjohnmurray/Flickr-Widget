@@ -96,12 +96,12 @@
 							<!-- close .row -->
 						</div>
 						<!-- close .box-16 -->
-						
+
 						<div class="box-16">
 							<div class="row with-spacing">
 								<div class="code-output">
 									<h4>Here's Your Code</h4>
-									<textarea name="" id=""></textarea>
+									<textarea></textarea>
 								</div>
 								<!-- close #code-output -->
 							</div>

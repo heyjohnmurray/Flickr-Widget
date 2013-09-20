@@ -1,4 +1,7 @@
 $(function() {
+	var wRowLi = $(".wRow li");
+	var size;	
+	
 	$("a").click(function(e){
 		e.preventDefault();
 	});
@@ -6,7 +9,7 @@ $(function() {
 	$(".image-size a").click(function(){
 		var idWidth = $(this).width();
 		var idHeight = $(this).height();
-		var size = $(this).data("size");
+		size = $(this).data("size");
 		$(".thumbnail img").width(idWidth);
 		$(".thumbnail img").height(idHeight);
 		$(".dimensions").remove();
@@ -17,22 +20,22 @@ $(function() {
 			height: idHeight
 		});
 	});
-	
+
 	//widget size creator code
-	$(".wRow li").on("click", function(){
+	wRowLi.on("click", function(){
 		var column = $(this).data("column");
 		var row = $(this).data("row");
 		//widget-dimensions finds the row and column value for the <li> I clicked on and lets me pass those
-		$(".wRow li").removeClass("widget-dimensions");				
+		wRowLi.removeClass("widget-dimensions");				
 		$(this).addClass("widget-dimensions");
-		$("li").removeClass("highlight");
+		wRowLi.removeClass("highlight");
 		$(".wRow").filter(function(index){
 			if(index <= row){
 				return true;
 			}
 		}).children().addClass("highlight");
 		
-		$(".wRow li").each(function(){
+		wRowLi.each(function(){
 			$(this).siblings()
 				.filter(function(index){
 			   		if(index >= column){
@@ -41,7 +44,7 @@ $(function() {
 			   	}).nextAll().removeClass("highlight");
 		});
 	});
-	
+
 	//get flickr images and organize them on the page
 	$.ajax({
 		dataType: "jsonp",		
@@ -63,16 +66,16 @@ $(function() {
 			console.log("something went wrong!");
 		}
 	});
+	
 	//keep working on this
 	$(".js-get-code").on("click", function(){
 		var wColumn = ($(".widget-dimensions").data("column") + 1);
 		var wRow = ($(".widget-dimensions").data("row") + 1);
 		var wLength = $(".highlight").length;
-		var widgetOutput = $(".preview .images").html();
+		var outputStyles = '<style type="text/css">.previewRow{float:left;display:block;width:100%}.previewRow .flickr-image{float:left;width:125px;height:125px;margin:10px;overflow:hidden;border:1px solid #fff;-webkit-box-shadow:1px 1px 0 0 #ccc;box-shadow:1px 1px 0 0 #ccc}.previewRow .flickr-image:hover{-webkit-box-shadow:1px 3px 0 0 #ccc;box-shadow:1px 3px 0 0 #ccc;cursor:pointer}.previewRow .flickr-image.large{width:125px;height:125px}.previewRow .flickr-image.medium{width:100px;height:100px}.previewRow .flickr-image.small{width:75px;height:75px}.previewRow .flickr-image img{max-width:none;margin:0 0 -80px -40px}</style>';
+		var widgetOutput;
 		
 		$(".preview .images, textarea").empty();
-		
-		console.log("y: " + wRow + ", x: " + wColumn);
 		
 		$.ajax({
 			dataType: "jsonp",		
@@ -83,19 +86,19 @@ $(function() {
 			success: function(data){
 				$(".loading").removeClass("show").addClass("hide");
 				for(var i=0; i<wLength; i++){
-					$(".preview .images").append("<div class='flickr-image'>" + "<img src='" + data.items[i].media.m + "' width='' height='' alt='' />" + "</div>");
+					$(".preview .images").append("<div class='flickr-image " + size + "'>" + "<img src='" + data.items[i].media.m + "' width='' height='' alt='' />" + "</div>");
 				}
-				var $children = $(".preview .images .flickr-image");
+				var $children = $(".flickr-image");
 				for(var i = 0, l = $children.length; i < l; i += wColumn) {
 				    $children.slice(i, i+wColumn).wrapAll('<div class="previewRow"></div>');
 				}
+				widgetOutput = $(".preview .images").html();
+				$("textarea").text(outputStyles + widgetOutput);
 			},
 			error: function(){
 				console.log("something went wrong!");
 			}
 		});
-		
-		$("textarea").html(widgetOutput);
 	});
 //close jquery
 });

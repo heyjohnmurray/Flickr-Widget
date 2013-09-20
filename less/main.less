@@ -58,7 +58,7 @@ h1{text-align: center; border-bottom: 1px dotted #444; font-weight: 400; padding
 			a{
 				float: left; width: 35px; height: 35px; background: #ccc; margin: 2px 5px 2px 0px;
 				&:hover{background: @pink;}
-			}
+			}			
 		}				
 	}
 	
@@ -66,37 +66,13 @@ h1{text-align: center; border-bottom: 1px dotted #444; font-weight: 400; padding
 		ul{margin: 20px 0;}
 		li{float: left;}
 		a{float: left; background: #ccc; display: block; margin: 0px 5px 0px 0px;}
-		a:hover, .image-size .current{background: @dark-gray;}
+		a:hover, .image-size .current{background: @dark-gray;}		
+		.dimensions{width: 100%; font-size: 14px; text-align: center; padding: 5px; background: @blue; color: #fff;}
 		.large{width: 125px; height: 125px;}
 		.medium{width: 100px; height: 100px;}
 		.small{width: 75px; height: 75px;}
-		.large-thumbnail{}
-		.dimensions{width: 100%; font-size: 14px; text-align: center; padding: 5px; background: @blue; color: #fff;}
-	}
-	.scheme-chooser{
-		ul{margin: 20px 0px 0px 0px;}
-		li{float: left;
-			a{
-				float:left; width: 40px; height: 40px; margin: 2px 3px 2px 0px;
-				.border;
-			}
-		}
-		
-				
-		.scheme-1{background: @blue;}
-		.scheme-2{background: @pink;}
-		.scheme-3{background: @light-blue;}
-		.scheme-4{background: @dark-gray;}
-			
-		.advanced-options{font-size: 13px;
-			.color-editor{display: none;}
-			ul{float: left; margin: 20px 0px 0px 0px;}
-			.labels li{margin: 5px 10px 10px 0px;}
-				.text-arrow{padding: 0px 0px 0px 10px;}
-			li{float: none; height: 20px;}
-			input{width: 75px;}
-		}
-	}
+	}	
+	
 	.code-output{
 		textarea{width: 100%; height: 120px;}
 	}
@@ -106,23 +82,14 @@ h1{text-align: center; border-bottom: 1px dotted #444; font-weight: 400; padding
 	}
 }
 
-	
 .preview{
 	position: relative;
+}
 	
-	.thumbnail{
-		float: left; margin: 2px 5px;
-	}
-	
-	li{
-		float: left; overflow: hidden; margin: 5px 15px 5px 0;
-	}
-	
-	.previewRow{
-		float: left;
-		display: block;
-		width: 100%;
-	}
+.previewRow{
+	float: left;
+	display: block;
+	width: 100%;
 	
 	.flickr-image{
 		float: left;
@@ -132,15 +99,19 @@ h1{text-align: center; border-bottom: 1px dotted #444; font-weight: 400; padding
 		overflow: hidden;
 		.border;
 		
+		&.large{width: 125px; height: 125px;}
+		&.medium{width: 100px; height: 100px;}
+		&.small{width: 75px; height: 75px;}
+		
 		img{
 			max-width: none;
 			margin: 0px 0px -80px -40px;
-		}
+		}		
 	}
-	
-	.loading{
-		position: absolute;
-		top: 100px;
-		left: 50%;
-	}	
 }
+
+.loading{
+	position: absolute;
+	top: 100px;
+	left: 50%;
+}	
